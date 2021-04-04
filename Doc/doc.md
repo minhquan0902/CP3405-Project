@@ -4,7 +4,7 @@
 1. Install Git client
 2. Set up your SSH key authentication. Don't specify password for the generated SSH key.
 3. Choose your workspaces folder
-4. Run the following commands
+4. Run the following commands on your cmd or terminal
 
 ```sh
 $ git clone https://github.com/minhquan0902/CP3405-Project.git
