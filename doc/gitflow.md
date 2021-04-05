@@ -83,3 +83,5 @@ Read [this post](https://www.atlassian.com/git/tutorials/comparing-workflows/git
 
    [Read more about Agile](https://www.atlassian.com/agile)
 
+
+## This doc is brought to you by Gracet.ai developer team (contact: gracet.ai)
