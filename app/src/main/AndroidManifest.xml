@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignThinkingIII">
         <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".Register">
+        <activity android:name=".OTPActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
