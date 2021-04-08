@@ -20,11 +20,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button mLogOutBtn = findViewById(R.id.log_out_btn);
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mLogOutBtn = findViewById(R.id.log_out_btn);
+        mAuth = FirebaseAuth.getInstance();
 
         mLogOutBtn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 mAuth.signOut();

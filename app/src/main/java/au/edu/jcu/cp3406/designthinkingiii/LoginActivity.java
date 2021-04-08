@@ -7,11 +7,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,10 +29,9 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginActivity extends AppCompatActivity {
 
-
-    private Button mLoginBtn;
+    private Button mSendOTPBtn;
     private TextView processText;
-    private EditText countryCodeEdit, phoneNumberEdit;
+    private EditText countryCodeEdit , phoneNumberEdit;
     private FirebaseAuth auth;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallBacks;
 
@@ -40,30 +40,33 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mLoginBtn = findViewById(R.id.login_button);
+        mSendOTPBtn = findViewById(R.id.login_button);
         processText = findViewById(R.id.text_process);
         countryCodeEdit = findViewById(R.id.input_country_code);
         phoneNumberEdit = findViewById(R.id.input_phone);
 
         auth = FirebaseAuth.getInstance();
 
-        mLoginBtn.setOnClickListener(v -> {
-            String country_code = countryCodeEdit.getText().toString();
-            String phone = phoneNumberEdit.getText().toString();
-            String phoneNumber = "+" + country_code + "" + phone;
-            if (!country_code.isEmpty() || !phone.isEmpty()) {
-                PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
-                        .setPhoneNumber(phoneNumber)
-                        .setTimeout(60L, TimeUnit.SECONDS)
-                        .setActivity(LoginActivity.this)
-                        .setCallbacks(mCallBacks)
-                        .build();
-                PhoneAuthProvider.verifyPhoneNumber(options);
-            } else {
-                processText.setText("Please Enter Country Code and Phone Number");
-                processText.setVisibility(View.VISIBLE);
+        mSendOTPBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String country_code = countryCodeEdit.getText().toString();
+                String phone = phoneNumberEdit.getText().toString();
+                String phoneNumber = "+" + country_code + "" + phone;
+                if (!country_code.isEmpty() || !phone.isEmpty()){
+                    PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
+                            .setPhoneNumber(phoneNumber)
+                            .setTimeout(60L , TimeUnit.SECONDS)
+                            .setActivity(LoginActivity.this)
+                            .setCallbacks(mCallBacks)
+                            .build();
+                    PhoneAuthProvider.verifyPhoneNumber(options);
+                }else{
+                    processText.setText("Please Enter Country Code and Phone Number");
+                    processText.setTextColor(Color.RED);
+                    processText.setVisibility(View.VISIBLE);
+                }
             }
-
         });
         mCallBacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
@@ -82,48 +85,43 @@ public class LoginActivity extends AppCompatActivity {
             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                 super.onCodeSent(s, forceResendingToken);
 
-                //sometimes the code is not detected automatically
-                // user has to manually Enter the code for him/herself
-
-                processText.setText("OTP has been sent");
+                //sometime the code is not detected automatically
+                //so user has to manually enter the code
+                processText.setText("OTP has been Sent");
                 processText.setVisibility(View.VISIBLE);
-                new Handler().postDelayed(() -> {
-                    Intent otpIntent = new Intent(LoginActivity.this, OTPActivity.class);
-                    otpIntent.putExtra("auth", s);
-                    startActivity(otpIntent);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent otpIntent = new Intent(LoginActivity.this , OTPActivity.class);
+                        otpIntent.putExtra("auth" , s);
+                        startActivity(otpIntent);
+                    }
                 }, 10000);
-
 
             }
         };
-
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         FirebaseUser user = auth.getCurrentUser();
-        if (user != null) {
-            sendtoMain();
+        if (user !=null){
+            sendToMain();
         }
-
     }
-
-    private void sendtoMain() {
-        Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+    private void sendToMain(){
+        Intent mainIntent = new Intent(LoginActivity.this , MainActivity.class);
         startActivity(mainIntent);
         finish();
-
     }
-
-    private void signIn(PhoneAuthCredential credential) {
+    private void signIn(PhoneAuthCredential credential){
         auth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    sendtoMain();
-                } else {
+                if (task.isSuccessful()){
+                    sendToMain();
+                }else{
                     processText.setText(Objects.requireNonNull(task.getException()).getMessage());
                     processText.setTextColor(Color.RED);
                     processText.setVisibility(View.VISIBLE);
@@ -131,4 +129,5 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
 }
