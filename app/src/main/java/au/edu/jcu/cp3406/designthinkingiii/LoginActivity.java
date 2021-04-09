@@ -47,25 +47,22 @@ public class LoginActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        mSendOTPBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String country_code = countryCodeEdit.getText().toString();
-                String phone = phoneNumberEdit.getText().toString();
-                String phoneNumber = "+" + country_code + "" + phone;
-                if (!country_code.isEmpty() || !phone.isEmpty()){
-                    PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
-                            .setPhoneNumber(phoneNumber)
-                            .setTimeout(60L , TimeUnit.SECONDS)
-                            .setActivity(LoginActivity.this)
-                            .setCallbacks(mCallBacks)
-                            .build();
-                    PhoneAuthProvider.verifyPhoneNumber(options);
-                }else{
-                    processText.setText("Please Enter Country Code and Phone Number");
-                    processText.setTextColor(Color.RED);
-                    processText.setVisibility(View.VISIBLE);
-                }
+        mSendOTPBtn.setOnClickListener(v -> {
+            String country_code = countryCodeEdit.getText().toString();
+            String phone = phoneNumberEdit.getText().toString();
+            String phoneNumber = "+" + country_code + "" + phone;
+            if (!country_code.isEmpty() || !phone.isEmpty()){
+                PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
+                        .setPhoneNumber(phoneNumber)
+                        .setTimeout(60L , TimeUnit.SECONDS)
+                        .setActivity(LoginActivity.this)
+                        .setCallbacks(mCallBacks)
+                        .build();
+                PhoneAuthProvider.verifyPhoneNumber(options);
+            }else{
+                processText.setText("Please Enter Country Code and Phone Number");
+                processText.setTextColor(Color.RED);
+                processText.setVisibility(View.VISIBLE);
             }
         });
         mCallBacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {

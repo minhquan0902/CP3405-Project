@@ -36,16 +36,13 @@ public class OTPActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         OTP = getIntent().getStringExtra("auth");
-        mVerifyCodeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String verification_code = otpEdit.getText().toString();
-                if(!verification_code.isEmpty()){
-                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(OTP , verification_code);
-                    signIn(credential);
-                }else{
-                    Toast.makeText(OTPActivity.this, "Please Enter OTP", Toast.LENGTH_SHORT).show();
-                }
+        mVerifyCodeBtn.setOnClickListener(v -> {
+            String verification_code = otpEdit.getText().toString();
+            if(!verification_code.isEmpty()){
+                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(OTP , verification_code);
+                signIn(credential);
+            }else{
+                Toast.makeText(OTPActivity.this, "Please Enter OTP", Toast.LENGTH_SHORT).show();
             }
         });
     }
