@@ -4,22 +4,230 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/home_screen"
+    android:textAlignment="center"
     tools:context=".MainActivity">
 
+    <!--Need backend for tutorial-->
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="301dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="48dp"
+        android:background="#FDFDFD"
+        android:visibility="visible"
+        android:onClick="Tutorial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.694"
+        app:srcCompat="@drawable/tutorial" />
 
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="307dp"
+        android:layout_height="37dp"
+        android:text="Voice Recognition"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955" />
 
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="302dp"
+        android:layout_height="37dp"
+        android:text="Turorials"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.772" />
+
+    <!--Need backend for voice recognition-->
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="301dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="48dp"
+        android:background="#FDFDFD"
+        android:visibility="visible"
+        android:onClick="voice_recognition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.893"
+        app:srcCompat="@drawable/voice_recognition" />
+
+    <!--Need backend for video call-->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="124dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="244dp"
+        android:background="#FDFDFD"
+        android:visibility="visible"
+        android:onClick="video_call"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452"
+        app:srcCompat="@drawable/videocall" />
+
+    <!--Need backend for voice call-->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="124dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="48dp"
+        android:background="#FDFDFD"
+        android:visibility="visible"
+        android:onClick="voice_call"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452"
+        app:srcCompat="@drawable/call" />
+
+    <!--Need backend for Message-->
+    <!--https://stackoverflow.com/questions/4785544/clickable-image-android-->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="124dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="244dp"
+        android:background="#FDFDFD"
+        android:visibility="visible"
+        android:onClick="Message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18"
+        app:srcCompat="@drawable/messages" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="127dp"
+        android:layout_height="32dp"
+        android:text="Messages"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.297" />
 
     <Button
 
+        android:id="@+id/log_out_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/log_out_btn"
         android:text="@string/logout"
 
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.098" />
+
+
+    <!--User will go to profile page when clicking on phone number-->
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="347dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="Your Phone number: +65 861171544"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:onClick="profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Need backend for contact-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="124dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="48dp"
+        android:background="#FDFDFD"
+        android:visibility="visible"
+        android:onClick="Contact"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18"
+        app:srcCompat="@drawable/contacts" />
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="127dp"
+        android:layout_height="32dp"
+        android:text="Contacts"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.297" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="127dp"
+        android:layout_height="32dp"
+        android:text="Voice call"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="127dp"
+        android:layout_height="32dp"
+        android:text="Video call"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
