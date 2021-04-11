@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'kotlin-android'
 }
 
 android {
@@ -15,6 +16,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // Enabling multidex support.
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -41,7 +44,13 @@ dependencies {
     // Declare the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore:22.1.2'
+    implementation 'com.google.firebase:firebase-database-ktx:19.7.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.multidex:multidex:2.0.1'  //with androidx libraries
+    //implementation 'com.android.support:multidex:1.0.3'  //with support libraries
 }
+apply plugin: 'kotlin-android-extensions'

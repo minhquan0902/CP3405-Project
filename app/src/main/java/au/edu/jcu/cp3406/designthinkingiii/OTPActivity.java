@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
-public class OTPActivity extends AppCompatActivity {
+public class    OTPActivity extends AppCompatActivity {
 
     private Button mVerifyCodeBtn;
     private EditText otpEdit;
@@ -47,14 +47,11 @@ public class OTPActivity extends AppCompatActivity {
         });
     }
     private void signIn(PhoneAuthCredential credential){
-        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    sendToMain();
-                }else{
-                    Toast.makeText(OTPActivity.this, "Verification Failed", Toast.LENGTH_SHORT).show();
-                }
+        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(task -> {
+            if (task.isSuccessful()){
+                sendToMain();
+            }else{
+                Toast.makeText(OTPActivity.this, "Verification Failed", Toast.LENGTH_SHORT).show();
             }
         });
     }

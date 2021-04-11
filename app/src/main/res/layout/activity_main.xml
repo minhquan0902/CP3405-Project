@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_screen"
+    android:background="@drawable/wallpaper"
     android:textAlignment="center"
     tools:context=".MainActivity">
 
@@ -28,6 +28,7 @@
         android:layout_width="307dp"
         android:layout_height="37dp"
         android:text="Voice Recognition"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="25dp"
@@ -44,6 +45,7 @@
         android:layout_width="302dp"
         android:layout_height="37dp"
         android:text="Turorials"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="25dp"
@@ -72,13 +74,15 @@
 
     <!--Need backend for video call-->
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/videocall"
         android:layout_width="124dp"
         android:layout_height="93dp"
         android:layout_marginStart="244dp"
         android:background="#FDFDFD"
         android:visibility="visible"
-        android:onClick="video_call"
+
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -122,6 +126,7 @@
         android:layout_width="127dp"
         android:layout_height="32dp"
         android:text="Messages"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="25dp"
@@ -133,39 +138,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.297" />
 
+
+    <!--User will go to profile page when clicking on phone number-->
+
+    <!--Need backend for contact-->
     <Button
 
         android:id="@+id/log_out_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="95dp"
+        android:layout_height="54dp"
         android:text="@string/logout"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.073" />
 
-
-    <!--User will go to profile page when clicking on phone number-->
     <TextView
         android:id="@+id/textView5"
         android:layout_width="347dp"
         android:layout_height="26dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="24dp"
+        android:onClick="profile"
         android:text="Your Phone number: +65 861171544"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:onClick="profile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--Need backend for contact-->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="124dp"
@@ -186,6 +191,7 @@
         android:layout_width="127dp"
         android:layout_height="32dp"
         android:text="Contacts"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="25dp"
@@ -202,6 +208,7 @@
         android:layout_width="127dp"
         android:layout_height="32dp"
         android:text="Voice call"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="25dp"
@@ -218,6 +225,7 @@
         android:layout_width="127dp"
         android:layout_height="32dp"
         android:text="Video call"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="25dp"
