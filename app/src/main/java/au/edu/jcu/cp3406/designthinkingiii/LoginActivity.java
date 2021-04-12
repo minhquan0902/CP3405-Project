@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                     sendToMain();
                 }else{
                     processText.setText(Objects.requireNonNull(task.getException()).getMessage());
-
+                    processText.setTextColor(Color.RED);
                     processText.setVisibility(View.VISIBLE);
                 }
             }
