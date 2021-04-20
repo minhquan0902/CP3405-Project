@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView videoCallButton;
     private TextView mUserPhone;
     private String phoneNumber;
+    private ImageView message_boxButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         videoCallButton= findViewById(R.id.videocall);
         mAuth = FirebaseAuth.getInstance();
         mUserPhone = findViewById(R.id.text_phone);
+        message_boxButton = findViewById(R.id.message_box);
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         assert currentUser != null;
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mUserPhone.setText(inform);
+        //message_boxButton -> create setonclick.
+
 
     }
 
