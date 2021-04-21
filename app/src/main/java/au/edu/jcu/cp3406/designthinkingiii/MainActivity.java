@@ -51,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mUserPhone.setText(inform);
-        //message_boxButton -> create setonclick.
+
+        message_boxButton.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, MessageActivity.class));
+                });
 
 
     }
