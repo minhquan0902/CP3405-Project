@@ -18,7 +18,7 @@ let peer;
 function init(userId) {
   peer = new Peer(userId, {
     // Currently passing local ip address, if hosted, provide the host ip address here
-    host: "10.71.15.213",
+    host: "10.30.2.145",
     port: 9000,
     path: "/videocall",
   });

@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView mUserPhone;
     private String phoneNumber;
     private ImageView message_boxButton;
+    private ImageView VoiceCallButton;
+    private ImageView ContactsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUserPhone = findViewById(R.id.text_phone);
         message_boxButton = findViewById(R.id.message_box);
+        VoiceCallButton = findViewById(R.id.voicecall);
+        ContactsButton = findViewById(R.id.contacts);
+
+
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         assert currentUser != null;
@@ -55,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
         message_boxButton.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, MessageActivity.class));
                 });
+
+        VoiceCallButton.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, VoiceCallActivity.class));
+        });
+        ContactsButton.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this,ContactProfileActivity.class));
+        });
 
 
     }
