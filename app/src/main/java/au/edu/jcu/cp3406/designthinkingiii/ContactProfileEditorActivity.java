@@ -11,6 +11,7 @@ import androidx.loader.content.Loader;
 
 
 import android.Manifest;
+import android.content.Context.*;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentValues;
@@ -21,6 +22,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Messenger;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -135,29 +137,31 @@ public class ContactProfileEditorActivity extends AppCompatActivity implements L
     }
     private void openSelector() {
         Intent intent;
-        if (Build.VERSION.SDK_INT < 19) {
-            intent = new Intent(Intent.ACTION_GET_CONTENT);
-        } else {
-            intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-            intent.addCategory(Intent.CATEGORY_OPENABLE);
-        }
+        intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType(getString(R.string.intent_type));
         startActivityForResult(Intent.createChooser(intent, getString(R.string.select_image)), 0);
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case 1:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     openSelector();
                 }
+            }
         }
-    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 0 && resultCode == Activity.RESULT_OK) {
+            Uri sourceTreeUri = data.getData();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                getContentResolver().takePersistableUriPermission(sourceTreeUri, Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            }
             if (data != null) {
                 mPhotoUri = data.getData();
                 mPhoto.setImageURI(mPhotoUri);
@@ -165,7 +169,7 @@ public class ContactProfileEditorActivity extends AppCompatActivity implements L
             }
         }
     }
-    // now worrking on menu options
+    // now working on menu options
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
