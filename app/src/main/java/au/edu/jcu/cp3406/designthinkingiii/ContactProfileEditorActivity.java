@@ -30,6 +30,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -39,7 +40,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class ContactProfileEditorActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
+    private static final int REQUEST_CALL =1;
     EditText  mNameEditText, mNumberEditText, mEmailEditText;
+    Button mCallButton;
     private Uri mPhotoUri;
     private Uri mCurrentContactUri;
     private String mType = Contract.ContactEntry.TYPEOFCONTACT_PERSONAL;
@@ -69,6 +72,7 @@ public class ContactProfileEditorActivity extends AppCompatActivity implements L
         mEmailEditText = findViewById(R.id.emailEditText);
         mPhoto = findViewById(R.id.profile_image);
         mSpinner = findViewById(R.id.spinner);
+        mCallButton = findViewById(R.id.callbutton);
 
         if (mCurrentContactUri == null) {
             mPhoto.setImageResource(R.drawable.photo);
@@ -95,6 +99,9 @@ public class ContactProfileEditorActivity extends AppCompatActivity implements L
         });
 
         setUpSpinner();
+        mCallButton.setOnClickListener(v ->{
+            makePhoneCall();
+        });
     }
     private void setUpSpinner() {
 
@@ -125,6 +132,7 @@ public class ContactProfileEditorActivity extends AppCompatActivity implements L
             }
         });
     }
+
     public void trySelector() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -229,6 +237,23 @@ public class ContactProfileEditorActivity extends AppCompatActivity implements L
         }
         return super.onOptionsItemSelected(item);
     }
+    private void makePhoneCall(){
+        String phone = mNumberEditText.getText().toString().trim();
+        if (phone.trim().length() > 0){
+            if (ContextCompat.checkSelfPermission(ContactProfileEditorActivity.this,
+                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                ActivityCompat.requestPermissions(ContactProfileEditorActivity.this, new String[] {Manifest.permission.CALL_PHONE}, REQUEST_CALL);
+            }else{
+                String dial = "tel:" + "+" +phone;
+                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+            }
+
+        } else{
+            Toast.makeText(ContactProfileEditorActivity.this, "Error calling user, phone might be blank!", Toast.LENGTH_SHORT ).show();
+        }
+
+    }
+
     private boolean saveContact() {
 
         // last step of this activity we have to create savecontact method

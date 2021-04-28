@@ -74,4 +74,16 @@
         android:layout_centerInParent="true"
         android:hint="Email"/>
 
+    <Button
+        android:id="@+id/callbutton"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailEditText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="117dp"
+        android:text="Call this user" />
+
 </RelativeLayout>
