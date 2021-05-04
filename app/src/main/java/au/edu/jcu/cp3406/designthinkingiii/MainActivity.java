@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView message_boxButton;
     private ImageView VoiceCallButton;
     private ImageView ContactsButton;
+    private ImageView btnvoicerecognition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         message_boxButton = findViewById(R.id.message_box);
         VoiceCallButton = findViewById(R.id.voicecall);
         ContactsButton = findViewById(R.id.contacts);
+        btnvoicerecognition = findViewById(R.id.btnvoicerecognition);
 
 
 
@@ -67,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         });
         ContactsButton.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this,ContactProfileActivity.class));
+        });
+        btnvoicerecognition.setOnClickListener(v ->{
+            startActivity(new Intent(MainActivity.this, VoiceRecognitionActivity.class));
         });
 
 
