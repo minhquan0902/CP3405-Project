@@ -23,7 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignThinkingIII"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VoiceRecognitionActivity"></activity>
+        <activity android:name=".VoiceRecognitionActivity" />
         <activity android:name=".ContactProfileEditorActivity" />
         <activity android:name=".ContactProfileActivity" />
         <activity android:name=".VoiceCallActivity" />

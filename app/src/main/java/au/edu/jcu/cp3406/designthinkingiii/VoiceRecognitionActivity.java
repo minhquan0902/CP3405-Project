@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
@@ -80,6 +81,31 @@ public class VoiceRecognitionActivity extends AppCompatActivity {
                     Intent startVideo = new Intent(getApplicationContext(), ContactProfileEditorActivity.class);
 
                     startActivity(startVideo);
+
+                }
+                if (mVoiceInputTv.getText().toString().equals("weather") || mVoiceInputTv.getText().toString().equals("weather today") ||  mVoiceInputTv.getText().toString().equals("how is the weather today") || mVoiceInputTv.getText().toString().equals("temperature") || mVoiceInputTv.getText().toString().equals("what is the temperature outside") || mVoiceInputTv.getText().toString().equals("how's the weather today")){
+                    Intent weatherIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.nea.gov.sg/weather"));
+                    startActivity(weatherIntent);
+
+                }
+                if (mVoiceInputTv.getText().toString().equals("newspaper") || mVoiceInputTv.getText().toString().equals("latest news") ||  mVoiceInputTv.getText().toString().equals("today's newspaper") || mVoiceInputTv.getText().toString().equals("todays news") || mVoiceInputTv.getText().toString().equals("news of today") || mVoiceInputTv.getText().toString().equals("open weather")){
+                    Intent newsIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.straitstimes.com/"));
+                    startActivity(newsIntent);
+
+                }
+                if (mVoiceInputTv.getText().toString().equals("YouTube") || mVoiceInputTv.getText().toString().equals("open YouTube") ||  mVoiceInputTv.getText().toString().equals("video clips") ){
+                    Intent newsIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/"));
+                    startActivity(newsIntent);
+
+                }
+                if (mVoiceInputTv.getText().toString().equals("Google") || mVoiceInputTv.getText().toString().equals("open Google") ||  mVoiceInputTv.getText().toString().equals("information") || mVoiceInputTv.getText().toString().equals("search engine") ){
+                    Intent newsIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"));
+                    startActivity(newsIntent);
+
+                }
+                if (mVoiceInputTv.getText().toString().equals("map") || mVoiceInputTv.getText().toString().equals("open map") ||  mVoiceInputTv.getText().toString().equals("map direction") || mVoiceInputTv.getText().toString().equals("world map") ){
+                    Intent newsIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps"));
+                    startActivity(newsIntent);
 
                 }
 
