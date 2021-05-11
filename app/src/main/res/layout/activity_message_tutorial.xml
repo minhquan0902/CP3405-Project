@@ -27,26 +27,26 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="253dp"
-        android:layout_height="407dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="236dp"
+        android:layout_height="376dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.083"
         app:srcCompat="@drawable/message_tutorial" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="393dp"
         android:layout_height="173dp"
-        android:text="1. Type your message at the message column \n 2.Click send to send your message"
+        android:text="1. Type your message at the message column \n2.Click send to send your message"
+        android:textAlignment="center"
         android:textColor="#FDFCFC"
-        android:textSize="34sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.68" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

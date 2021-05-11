@@ -3,6 +3,7 @@ package au.edu.jcu.cp3406.designthinkingiii;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView VoiceCallButton;
     private ImageView ContactsButton;
     private ImageView btnvoicerecognition;
+    private ImageView btnTutorialPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         VoiceCallButton = findViewById(R.id.voicecall);
         ContactsButton = findViewById(R.id.contacts);
         btnvoicerecognition = findViewById(R.id.btnvoicerecognition);
+        btnTutorialPage = findViewById(R.id.tutorialPage);
 
 
 
@@ -74,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, VoiceRecognitionActivity.class));
         });
 
+        mUserPhone.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, ProfileDisplayActivity.class));
+        });
+
+        btnTutorialPage.setOnClickListener(v ->{
+            startActivity(new Intent(MainActivity.this, TutorialPageActivity.class));
+        });
 
     }
 

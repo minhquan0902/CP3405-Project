@@ -23,6 +23,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignThinkingIII"
         android:usesCleartextTraffic="true">
+        <activity android:name=".TutorialVoiceRecognitionActivity"></activity>
+        <activity android:name=".TutorialVoiceCallActivity" />
+        <activity android:name=".TutorialVideoCallActivity" />
+        <activity android:name=".TutorialMessageActivity" />
+        <activity android:name=".TutorialContactActivity" />
+        <activity android:name=".TutorialPageActivity" />
+        <activity android:name=".ProfileDisplayActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".VoiceRecognitionActivity" />
         <activity android:name=".ContactProfileEditorActivity" />
         <activity android:name=".ContactProfileActivity" />

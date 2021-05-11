@@ -27,29 +27,26 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="379dp"
-        android:layout_height="475dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="380dp"
+        android:layout_height="417dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.062"
         app:srcCompat="@drawable/voice_recognition_tutorial" />
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="393dp"
-        android:layout_height="173dp"
-        android:text="1.Click this button to start voice recognition. \n
-Try to say 'open youtube'. It will displayed afterwards "
+        android:layout_width="363dp"
+        android:layout_height="138dp"
+        android:text="1. Click this button to start voice recognition. \n2. Try to say 'open youtube'. It will displayed afterwards "
+        android:textAlignment="center"
         android:textColor="#FDFCFC"
-        android:textSize="34sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

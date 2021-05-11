@@ -13,12 +13,12 @@
     <!--Need backend for voice recognition-->
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/tutorialPage"
         android:layout_width="301dp"
         android:layout_height="92dp"
         android:layout_marginTop="12dp"
         android:background="#FDFDFD"
-        android:onClick="Tutorial"
+        android:clickable="true"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"
@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintTop_toBottomOf="@+id/tutorialPage" />
 
     <ImageView
         android:id="@+id/btnvoicerecognition"
@@ -191,7 +191,7 @@
         android:layout_width="347dp"
         android:layout_height="26dp"
         android:layout_marginTop="16dp"
-        android:onClick="profile"
+        android:clickable="true"
         android:text="Your Phone number: +65 861171544"
         android:textAlignment="center"
         android:textColor="@color/white"

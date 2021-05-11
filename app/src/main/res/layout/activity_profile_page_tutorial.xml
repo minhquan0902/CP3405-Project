@@ -29,27 +29,24 @@
         android:id="@+id/imageView"
         android:layout_width="379dp"
         android:layout_height="475dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.062"
         app:srcCompat="@drawable/profile_tutorial" />
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="393dp"
-        android:layout_height="173dp"
-        android:text=" 1.Enter your name. \n
-2.Enter your E-Mail here. \n 3.Click Save to save your profile"
+        android:layout_width="371dp"
+        android:layout_height="102dp"
+        android:text=" 1. Enter your name. \n
+2. Enter your E-Mail here. \n 3.Click Save to save your profile"
         android:textColor="#FDFCFC"
-        android:textSize="34sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

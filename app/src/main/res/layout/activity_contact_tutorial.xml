@@ -27,29 +27,27 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="379dp"
-        android:layout_height="475dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="298dp"
+        android:layout_height="315dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.062"
         app:srcCompat="@drawable/contact_tutorial" />
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="393dp"
-        android:layout_height="173dp"
-        android:text="1.Click this to add or change the picture \n 2.
-Enter the name of the contact \n 3.Enter the phone number.\n 4. Enter E-Mail if needed.\n
-5. Click this button to call this user."
+        android:layout_width="373dp"
+        android:layout_height="234dp"
+        android:text="1.Click this to add or change the picture \n2.
+Enter the name of the contact \n3.Enter the phone number.\n4. Enter E-Mail if needed.\n5. Click this button to call this user."
+        android:textAlignment="center"
         android:textColor="#FDFCFC"
-        android:textSize="34sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.982" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -10,34 +10,34 @@
         android:id="@+id/text_phone"
         android:layout_width="347dp"
         android:layout_height="26dp"
-        android:layout_marginTop="188dp"
         android:onClick="profile"
         android:text="Your Phone number: +65 861171544"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nameInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/myProfileText"
+        app:layout_constraintVertical_bias="0.287" />
 
     <EditText
         android:id="@+id/inputEmail"
-        android:layout_width="411dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="296dp"
+        android:layout_width="390dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="220dp"
         android:background="@color/white"
         android:ems="10"
         android:hint=" Enter your E-mail: "
         android:inputType="textPersonName"
-        android:textSize="42dp"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addContactText" />
+        app:layout_constraintTop_toBottomOf="@+id/nameInput"
+        app:layout_constraintVertical_bias="0.314" />
 
     <TextView
         android:id="@+id/myProfileText"
@@ -56,18 +56,18 @@
 
     <EditText
         android:id="@+id/nameInput"
-        android:layout_width="414dp"
-        android:layout_height="85dp"
+        android:layout_width="390dp"
+        android:layout_height="50dp"
         android:layout_marginTop="188dp"
         android:layout_marginBottom="360dp"
         android:background="@color/white"
-        android:ems="10"
+        android:ems="5"
         android:hint=" Enter your name: "
         android:inputType="textPersonName"
-        android:textSize="42dp"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addContactText" />
 
@@ -81,5 +81,17 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+
+    <Button
+        android:id="@+id/backHomeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveProfileBtn"
+        app:layout_constraintVertical_bias="0.326" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
