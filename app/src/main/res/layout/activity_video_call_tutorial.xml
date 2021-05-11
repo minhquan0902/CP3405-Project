@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginTop="16dp"
-        android:text="Messaging tutorial"
+        android:text="Video Call tutorial"
         android:textAlignment="center"
         android:textColor="#FDFCFC"
         android:textSize="34sp"
@@ -27,26 +27,29 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="253dp"
-        android:layout_height="407dp"
+        android:layout_width="379dp"
+        android:layout_height="475dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.083"
-        app:srcCompat="@drawable/message_tutorial" />
+        app:layout_constraintVertical_bias="0.176"
+        app:srcCompat="@drawable/video_call_tutorial" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="393dp"
         android:layout_height="173dp"
-        android:text="1. Type your message at the message column \n 2.Click send to send your message"
+        android:text="1. Click the button to start the video call \n
+2. Enter the number that you want to call."
         android:textColor="#FDFCFC"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
