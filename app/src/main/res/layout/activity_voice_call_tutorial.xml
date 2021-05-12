@@ -27,22 +27,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="253dp"
-            android:layout_height="407dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="0.083"
-            app:srcCompat="@drawable/voice_call_tutorial" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="249dp"
+        android:layout_height="405dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@drawable/voice_call_tutorial" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="393dp"
             android:layout_height="173dp"
-            android:text="1. Fill up the number that you want to call \n 2.Click the call button to start the call"
+            android:text="1. Fill up the number that you want to call \n2.Click the call button to start the call"
+            android:textAlignment="center"
             android:textColor="#FDFCFC"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
