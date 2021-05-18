@@ -29,7 +29,7 @@ public class ContactProfileActivity extends AppCompatActivity implements LoaderM
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_profile);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton  fab = findViewById(R.id.fab);
         fab.setOnClickListener(v -> {
             Intent intent = new Intent(ContactProfileActivity.this, ContactProfileEditorActivity.class);
             startActivity(intent);
