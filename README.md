@@ -10,3 +10,5 @@ ConnectUs is an app designed for elderly people in Australia to help them to get
 
 The app is with the support of Firebase Auth and Firebase real-time database
 
+Follow docs/ folder for installation guide and contribution guide!
+
