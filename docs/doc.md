@@ -10,7 +10,7 @@
 $ git clone https://github.com/minhquan0902/CP3405-Project.git
 $ cd CP3405-Project
 ```
-5. After cloning, simple open project on your Android Studio and run
+5. After cloning, simply open project on your Android Studio and run
 
 
 ## Download Android Studio:
